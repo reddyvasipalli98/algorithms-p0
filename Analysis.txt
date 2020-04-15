@@ -15,6 +15,9 @@ Even for space we have an expanding list of length n so O[n]
 
 Task2:
 
-O[n] for time
-?? for space
+O[n] for space and time
+The for loop makes the time O[n]
+The incrementing dictionary makes the space O[n]
+
+===========================================================
 
