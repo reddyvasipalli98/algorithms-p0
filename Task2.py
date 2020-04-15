@@ -27,7 +27,9 @@ for item in calls:
         my_dict.update([(item[1], int(item[3]))])
     
 
-print(max(my_dict))
+max_val = max(my_dict)
+max_ph = max(my_dict, key = my_dict.get)
+print("{} spent the longest time, {} seconds, on the phone during September 2016".format(max_ph, max_val))
 
 """
 TASK 2: Which telephone number spent the longest time on the phone
