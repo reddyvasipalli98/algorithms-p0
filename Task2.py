@@ -11,6 +11,24 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
+my_dict = {}
+
+for item in calls:
+    if item[0] in my_dict:
+        value = my_dict[item[0]]
+        my_dict[item[0]] = value + int(item[3])
+    else:
+        my_dict.update([(item[0], int(item[3]))])
+
+    if item[1] in my_dict:
+        value = my_dict[item[1]]
+        my_dict[item[1]] = value + int(item[3])
+    else:
+        my_dict.update([(item[1], int(item[3]))])
+    
+
+print(max(my_dict))
+
 """
 TASK 2: Which telephone number spent the longest time on the phone
 during the period? Don't forget that time spent answering a call is
