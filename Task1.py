@@ -11,35 +11,18 @@ with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
 
-telephones = []
+tells = set()
 
 for row in texts:
-    countFrom = 0
-    countTo = 0
-    for item in telephones:
-        if item == row[0]:
-            countFrom = countFrom + 1
-        if item == row[1]:
-            countTo = countTo + 1
-    if countFrom == 0:
-        telephones.append(row[0])
-    if countTo == 0:
-        telephones.append(row[1])
+    tells.add(row[0])
+    tells.add(row[1])
 
 for row in calls:
-    countFrom = 0
-    countTo = 0
-    for item in telephones:
-        if item == row[0]:
-            countFrom = countFrom + 1
-        if item == row[1]:
-            countTo = countTo + 1
-    if countFrom == 0:
-        telephones.append(row[0])
-    if countTo == 0:
-        telephones.append(row[1])
+    tells.add(row[0])
+    tells.add(row[1])
 
-print("There are {} different telephone numbers in the records.".format(len(telephones)))
+
+print("There are {} different telephone numbers in the records.".format(len(tells)))
 """
 TASK 1:
 How many different telephone numbers are there in the records? 
