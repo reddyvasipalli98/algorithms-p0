@@ -11,6 +11,26 @@ with open('texts.csv', 'r') as f:
 with open('calls.csv', 'r') as f:
     reader = csv.reader(f)
     calls = list(reader)
+  
+set_calls = []
+bang_count = 0
+
+for item in calls:
+  if item[0][0:5] == "(080)":
+    if item[1][0] == "(" or item[1][5] == " " or item[1][0:3] == "140":
+      set_calls.append(item[1])
+      if item[1][0:5] == "(080)":
+        bang_count = bang_count + 1
+
+percent = (bang_count*100)/(len(set_calls))
+
+print("Part A")
+print("The numbers called by people in Bangalore have codes:")
+print(set(set_calls))
+print("===================================================")
+print("Part B")
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(round(percent,2)))
+
 
 """
 TASK 3:
