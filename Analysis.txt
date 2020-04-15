@@ -1,0 +1,7 @@
+Task0:
+
+O[1] - for both space and time for this problem as the run time is constant no matter the size of input as we accessing a single constant element
+
+Task1:
+
+O[n] for this problem as the for loop interated through the file n number of times.
