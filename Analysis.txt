@@ -21,4 +21,18 @@ The incrementing dictionary makes the space O[n]
 
 ===========================================================
 
+Task3
 
+
+O[n] for space and time
+The for loop makes the time O[n]
+The incrementing list makes the space O[n]
+
+=============================================================
+
+Task4
+
+O[n^2] for time
+O[n] for space
+The use of for loops makes the time O[n+n+n^2] ehich results in O[n^2]
+The incrementing list makes the space O[n]
