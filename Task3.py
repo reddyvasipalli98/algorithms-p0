@@ -17,10 +17,20 @@ bang_count = 0
 
 for item in calls:
   if item[0][0:5] == "(080)":
-    if item[1][0] == "(" or item[1][5] == " " or item[1][0:3] == "140":
-      set_calls.append(item[1])
-      if item[1][0:5] == "(080)":
-        bang_count = bang_count + 1
+    if item[1][0] == "(":
+      temp = ""
+      for sub in item[1]:
+        if sub == ")":
+          break
+        else:
+          temp = temp + sub
+      set_calls.append(temp+")")
+    elif item[1][0] == "7" or item[1][0] == "8" or item[1][0] == "9":
+      set_calls.append(item[1][0:4])
+    else:
+      set_calls.append(140)
+    if item[1][0:5] == "(080)":
+      bang_count = bang_count + 1
 
 percent = (bang_count*100)/(len(set_calls))
 
